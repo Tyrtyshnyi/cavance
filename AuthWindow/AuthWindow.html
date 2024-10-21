@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./AuthWindow.css">
+    <script src="./AuthWindow.js"></script>
+    <!-- Установка Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';">
+    <title>savance</title>
+</head>
+<body class="body">
+<h2>Введите данные для почтового сервера</h2>
+<form id="auth-form">
+    <label for="username">Логин:</label>
+    <input type="text" id="username" name="username"><br><br>
+
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password"><br><br>
+
+    <button type="submit">Авторизоваться</button>
+</form>
+
+</body>
+</html>

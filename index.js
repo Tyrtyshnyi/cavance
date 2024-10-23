@@ -12,9 +12,9 @@ let authWindow;
 
 function createAuthWindow() {
     authWindow = new BrowserWindow({
-        width: 400,
-        height: 550,
-        resizable: false, // Возможность изменять размеры окна
+        //width: 400,
+       // height: 550,
+        resizable: true, // Возможность изменять размеры окна
         movable: true, // Возможность передвигать окно
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'), // Если понадобится, для скриптов

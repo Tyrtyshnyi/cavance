@@ -6,20 +6,36 @@
     <link rel="stylesheet" href="./AuthWindow.css">
     <script src="./AuthWindow.js"></script>
     <!-- Установка Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com;">
+
     <title>savance</title>
 </head>
 <body class="body">
-<h2>Введите данные для почтового сервера</h2>
-<form id="auth-form">
-    <label for="username">Логин:</label>
-    <input type="text" id="username" name="username"><br><br>
 
-    <label for="password">Пароль:</label>
-    <input type="password" id="password" name="password"><br><br>
+<div class="label">
+    <div class=" label_s">S</div>
+    <div class="label_a"> Λ</div>
+    <div class="label_v"> V</div>
+    <div class= "label_a"> Λ</div>
+    <div class="label_n"> N</div>
+    <div class="label_c"> C</div>
+    <div class="label_e"> E</div>
+<!--    <div class="ver"> ver 0.0.1</div>-->
+</div>
 
-    <button type="submit">Авторизоваться</button>
-</form>
 
+    <div class="wrapper">
+        <form action="#">
+            <h1> Авторизация </h1>
+            <div class="input-box">
+                <input type="text" placeholder="Почта" required>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Пароль" required>
+            </div>
+
+            <button class="button-submit" type="submit">Войти</button>
+        </form>
+    </div>
 </body>
 </html>

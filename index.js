@@ -8,11 +8,13 @@ electronReload(__dirname, {
 
 
 let authWindow;
-let mainWindow
+// let mainWindow
 
 function createAuthWindow() {
     authWindow = new BrowserWindow({
-        resizable: true, // Возможность изменять размеры окна
+        width: 400,
+        height: 550,
+        resizable: false, // Возможность изменять размеры окна
         movable: true, // Возможность передвигать окно
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'), // Если понадобится, для скриптов
@@ -23,8 +25,8 @@ function createAuthWindow() {
 
     // Загружаем в окно HTML-файл
     authWindow.setMenu(null);
-    authWindow.maximize();
-    authWindow.setMinimumSize(1000, 800);
+    // authWindow.maximize();
+    // authWindow.setMinimumSize(1000, 800);
 
     authWindow.loadFile(path.join(__dirname, 'AuthWindow', 'AuthWindow.html'))
         .then(() => {

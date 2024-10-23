@@ -1,9 +1,110 @@
-.body{
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;1,100&display=swap');
+:root{
+    --var-element-color: #2d2d2d;
+    --var-element-color-focus: #3a3a3a;
+}
+* {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    font-family: 'exo 2', sans-serif;
+    font-weight: 100;
+}
+
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     background-color:#212121;
     color:white;
     outline: solid red;
+}
+
+.label{
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    user-select: none;
+    top: 5%; /* Регулируем положение текста на странице */
+    letter-spacing: 1px;
+    /*text-shadow: 5px -1px 10px rgb(0, 0, 0) ;*/
+    color: rgba(0, 0, 0, 0.5); /* Цвет текста */
+    font-size: 25px; /* Размер шрифта */
+    text-align: center; /* Выравниваем текст по центру */
+    transition: 1s ease-in-out;
+    /*outline: solid red;*/
+}
+.label_a{
+
+    margin-top:0;
+}
+.wrapper{
+    margin-top:20%;
+    position: relative; /* Добавляем это */
+    width: 90%;
+    height: 400px;
+    padding: 10px;
+    background:var(--var-element-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 20px #000000;
+    border: 1px solid #505050;
+    /*outline:1px solid green;*/
+}
+.wrapper h1{
+    user-select: none;
+    font-size: 20px;
+    margin:10px 0 90px 0;
+    text-align: center;
+    /*outline: 1px solid red;*/
+}
+
+.wrapper .input-box{
+
+    width: 100%;
+    height: 40px;
+    margin: 20px 0 20px 0;
+    /*outline: 1px solid violet;*/
+}
+
+.input-box input {
+
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background: var(--var-element-color);
+    border: 1px solid #505050;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.51);
+    transition: 0.3s ease-in-out;
+    outline: none;
 
 }
 
+.input-box input:focus {
+    transition: 0.3s ease-in-out;
+    border-bottom: 1px solid #757575;
+}
+.button-submit{
+    cursor: pointer;
+    user-select: none;
+    width: 50%;
+    height: 25px;
+    position: absolute;
+    bottom: 10%;
+    right: 25%;
+    appearance: none;
+    border: 1px solid #505050;
+    border-radius: 5px;
+    color: white;
+    background: var(--var-element-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.51);
+    transition: 0.3s ease-in-out;
+}
+.button-submit:hover{
+    transition: 0.3s ease-in-out;
+    background: var(--var-element-color-focus);
+}

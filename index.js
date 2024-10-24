@@ -25,8 +25,8 @@ function createAuthWindow() {
 
     // Загружаем в окно HTML-файл
     authWindow.setMenu(null);
-    // authWindow.maximize();
-    // authWindow.setMinimumSize(1000, 800);
+    authWindow.maximize();
+    authWindow.setMinimumSize(1000, 800);
 
     authWindow.loadFile(path.join(__dirname, 'AuthWindow', 'AuthWindow.html'))
         .then(() => {

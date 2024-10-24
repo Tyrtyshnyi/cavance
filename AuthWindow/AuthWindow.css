@@ -49,61 +49,61 @@
 
 .label:hover{
     color:black;
-    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    text-shadow: 0 0 0 rgb(0, 0, 0);
 }
 
 
-.wrapper{
+.wrapper {
     position: relative;
     width: 300px;
     height: 400px;
-    padding: 10px;
-    background:var(--var-element-color);
-    /*box-shadow: 0 1px 10px #000000;*/
+    padding: 15px;
+    background: var(--var-element-color);
     border: 1px solid #505050;
-    transition: 0.5s ease-in-out;
-    /*outline:1px solid green;*/
+    transition: 1s ease-in-out;
 }
 
 .wrapper:hover{
     border-radius: 10px;
     box-shadow: 0 2px 20px #000000;
-    transition: 0.5s ease-in-out;
+
+    transition: 1s ease-in-out;
 }
 
 .wrapper:hover input{
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.51);
 }
+
+
 .wrapper:hover h1{
-    transition: 0.5s ease-in-out;
+    transition: 1s ease-in-out;
     color: white;
 }
 
 .wrapper:hover .button-submit{
+    color: white;
     border-radius: 5px;
+    transition: 1s ease-in-out;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.51);
 }
 
-.wrapper h1{
+.wrapper h1 {
     color: grey;
     user-select: none;
     font-size: 20px;
-    margin:10px 0 90px 0;
+    margin: 10px 0 90px 0;
     text-align: center;
-    transition: 0.5s ease-in-out;
-    /*outline: 1px solid red;*/
+    transition: 1s ease-in-out;
 }
 
-.wrapper .input-box{
+.wrapper .input-box {
     width: 100%;
     height: 40px;
     margin: 20px 0 20px 0;
-    /*outline: 1px solid violet;*/
 }
 
 .input-box input {
-
     appearance: none;
     width: 100%;
     height: 100%;
@@ -111,17 +111,82 @@
     background: var(--var-element-color);
     border: 1px solid #505050;
     color: white;
-    transition: 0.3s ease-in-out;
+    transition: 1s ease-in-out;
     outline: none;
+}
+
+
+
+
+.placeholder_login{
+    background-color: var(--var-element-color);
+    font-size: 15px;
+    color: #7e7e7e;
+    display:block;
+    margin-top: -29px;
+    position:absolute;
+    margin-left: 10px;
+    pointer-events: none;
+    /* outline: 1px solid red; */
 
 }
+
+.placeholder_pass{
+    background-color: var(--var-element-color);
+    font-size: 15px;
+    color: #7e7e7e;
+    display:block;
+    margin-top: -29px;
+    position:absolute;
+    margin-left: 10px;
+    pointer-events: none;
+    /*outline: 1px solid red;*/
+}
+
+
+
+
+
+.log-entry:focus + .placeholder_login,
+.log-entry:not(:focus):valid + .placeholder_login{
+
+    transition: 0.5s ease-in-out;
+    color: #adadad;
+    transform-origin: left;
+    margin-top: -48px;
+    margin-left: 10px;
+    transform: scale(.90);
+}
+
+.log-entry:not(:focus) + .placeholder_login {
+    transition: 0.5s ease-in-out;
+}
+
+
 
 .input-box input:focus {
     transition: 0.3s ease-in-out;
     border-bottom: 1px solid #757575;
 }
 
-.button-submit{
+.pass-entry:focus + .placeholder_pass,
+.pass-entry:not(:focus):valid + .placeholder_pass {
+    transition: 0.5s ease-in-out;
+    color: #adadad;
+    margin-top: -48px;
+    transform-origin: left;
+    transform: scale(.90);
+    text-shadow: 5px 10px 10px transparent;
+
+}
+
+.pass-entry:not(:focus) + .placeholder_pass {
+
+    transition: 0.5s ease-in-out;
+
+}
+
+.button-submit {
     cursor: pointer;
     user-select: none;
     width: 50%;
@@ -131,11 +196,24 @@
     right: 25%;
     appearance: none;
     border: 1px solid #505050;
-    color: white;
+    color: grey;
     background: var(--var-element-color);
-    transition: 0.3s ease-in-out;
+    transition: 1s ease-in-out;
 }
-.button-submit:hover{
+
+.button-submit:hover {
+
     transition: 0.3s ease-in-out;
     background: var(--var-element-color-focus);
+}
+
+
+.help{
+    position: absolute;
+    justify-content: center;
+    flex-direction: row;
+    user-select: none;
+    color: var(--var-element-color-focus);
+    text-decoration: none;
+    /*outline: 1px solid red; !* Контур для визуализации *!*/
 }

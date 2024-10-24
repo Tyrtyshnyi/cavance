@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./AuthWindow.css">
     <script defer src="./AuthWindow.js"></script> <!-- defer для отложенной загрузки -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'self' http://192.168.1.34:5000;">
     <title>savance</title>
 </head>
 <body class="body">
@@ -22,15 +22,22 @@
 
 <div class="wrapper">
     <form id="auth-form">
-        <h1>Авторизация</h1>
+        <h1>login</h1>
         <div class="input-box">
-            <input type="text" placeholder="Почта" id="email" required>
+            <input type="text" id="email" class="form_input log-entry" required>
+            <label class="placeholder_login">Mail</label>
         </div>
         <div class="input-box">
-            <input type="password" placeholder="Пароль" id="password" required>
+            <input type="password" id="password" class= "form_input pass-entry" required>
+            <label class="placeholder_pass">Password</label>
         </div>
-        <button class="button-submit" type="submit">Войти</button>
+        <div>
+            <a href="https://t.me/museum_of_the_void" class="help" target="_blank">Help</a>
+        </div>
+        <button class="button-submit" type="submit">Enter</button>
+
     </form>
 </div>
+
 </body>
 </html>

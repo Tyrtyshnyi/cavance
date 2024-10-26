@@ -1,20 +1,23 @@
+const { ipcRenderer } = require('electron');
+
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('auth-form'); // Убедитесь, что у вас есть ID формы
+    const form = document.getElementById('auth-form');
+    const responseCallback = document.querySelector('.response-callback'); // Селектор для блока с ответом
 
     form.addEventListener('submit', async (event) => {
-        event.preventDefault(); // Предотвращаем отправку формы по умолчанию
+        event.preventDefault();
 
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
         // Проверка полей
         if (email.trim() === '' || password.trim() === '') {
-            console.error('Пожалуйста, заполните все поля.'); // Можно вывести сообщение пользователю
+            responseCallback.textContent = 'Заполните все поля!';
             return;
         }
 
         try {
-            const response = await fetch('http://192.168.1.34:5000/login/', { // Убедитесь, что URL правильный
+            const response = await fetch('http://192.168.1.34:5000/login/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -25,27 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 }),
             });
 
-            if (!response.ok) {
-                const errorText = await response.text(); // Получение текста ошибки
-                throw new Error(`Ошибка: ${response.status} - ${errorText}`);
-            }
-
             const data = await response.json();
+
+            if (!response.ok) {
+                responseCallback.textContent = `${data.error || 'Неверный ответ сервера'}`;
+                return;
+            }
 
             // Обработка ответа сервера
             if (data.error) {
-                // Показать ошибку на фронте
-                console.error(data.error);
-                alert(data.error); // Можно показать сообщение пользователю
+                responseCallback.textContent = `${data.error}`;
             } else {
-                // Успешный вход
-                console.log('Успешный вход:', data);
-                alert('DEBUG: Вы успешно вошли!'); // Можно показать сообщение пользователю
-
+                responseCallback.textContent = `${JSON.stringify(data)}`;
+                // Отправляем сообщение в основной процесс
+                ipcRenderer.send('auth-success');
             }
         } catch (error) {
             console.error('Ошибка:', error);
-            alert('DEBUG:Произошла ошибка при отправке данных.'); // Сообщение пользователю об ошибке
+            responseCallback.textContent = '';
         }
     });
 });

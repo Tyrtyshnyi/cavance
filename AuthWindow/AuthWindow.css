@@ -1,4 +1,3 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;1,100&display=swap');*/
 @font-face {
     font-family: 'Exo2';
     src: url('../fonts/Exo_2/static/Exo2-Thin.ttf') format('truetype');
@@ -7,6 +6,7 @@
 
 :root{
     --var-element-color: #2d2d2d;
+
     --var-element-color-focus: #3a3a3a;
 }
 * {
@@ -23,6 +23,7 @@
     align-items: center;
     min-height: 100vh;
     background-color:#212121;
+    /*background-image: linear-gradient(to bottom, #002348, #093859);*/
     color:white;
 }
 
@@ -35,22 +36,25 @@
     user-select: none;
     top: 5%;
     letter-spacing: 1px;
-    color: var(--var-element-color);
+    color: var(--var-element-color-focus);
     text-shadow: 1px 1px 2px #000000;
     font-size: 25px; /* Размер шрифта */
     text-align: center; /* Выравниваем текст по центру */
     transition: 1s ease-in-out;
     /*outline: solid red;*/
 }
-.label_a{
 
+
+.label_a{
     margin-top:0;
 }
 
+
 .label:hover{
-    color:black;
-    text-shadow: 0 0 0 rgb(0, 0, 0);
+    color:var(--var-element-color);
+    /*text-shadow: 0 0 0 rgb(0, 0, 0);*/
 }
+
 
 
 .wrapper {
@@ -60,17 +64,18 @@
     padding: 15px;
     background: var(--var-element-color);
     border: 1px solid #505050;
-    transition: 1s ease-in-out;
+    transition: 20s ease-in-out;
 }
 
 .wrapper:hover{
     border-radius: 10px;
     box-shadow: 0 2px 20px #000000;
 
-    transition: 1s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 .wrapper:hover input{
+    transition: 1s ease-in-out;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.51);
 }
@@ -94,10 +99,11 @@
     font-size: 20px;
     margin: 10px 0 90px 0;
     text-align: center;
-    transition: 1s ease-in-out;
+    transition: 20s ease-in-out;
 }
 
 .wrapper .input-box {
+
     width: 100%;
     height: 40px;
     margin: 20px 0 20px 0;
@@ -111,7 +117,7 @@
     background: var(--var-element-color);
     border: 1px solid #505050;
     color: white;
-    transition: 1s ease-in-out;
+    transition: 20s ease-in-out;
     outline: none;
 }
 
@@ -198,7 +204,7 @@
     border: 1px solid #505050;
     color: grey;
     background: var(--var-element-color);
-    transition: 1s ease-in-out;
+    transition: 20s ease-in-out;
 }
 
 .button-submit:hover {
@@ -208,12 +214,33 @@
 }
 
 
-.help{
+.help {
     position: absolute;
+    bottom: 125px; /* Отступ от нижней границы */
+    left: 50%; /* Размещаем элемент по центру экрана */
+    transform: translateX(-50%); /* Центрируем по оси X */
+    display: flex;
     justify-content: center;
     flex-direction: row;
     user-select: none;
     color: var(--var-element-color-focus);
     text-decoration: none;
-    /*outline: 1px solid red; !* Контур для визуализации *!*/
+    /*outline: 1px solid red;*/
+}
+.help:hover {
+    color: #545454;
+}
+
+.response-callback{
+    font-size: 15px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%; /* Размещаем элемент по центру экрана */
+    transform: translateX(-50%); /* Центрируем по оси X */
+    color: #a10000;
+    margin-top:30px;
+    height: 30px;
+    /*outline: 1px solid red;*/
 }
